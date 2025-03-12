@@ -50,24 +50,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hacer la función accesible desde el HTML
     window.mostrarSeccion = mostrarSeccion;
 
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita la recarga de la página
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita el envío normal del formulario
     
-        let formData = new FormData(this); // Captura los datos del formulario
-    
-        fetch(this.action, { // Enviar los datos a ByetHost
+        // Redirige manualmente con los datos
+        const formData = new FormData(this);
+        fetch("http://jhonyform.mydiscussion.net/contactos.php", {
             method: "POST",
             body: formData
         })
         .then(response => response.text())
-        .then(data => {
-            alert("Mensaje enviado correctamente"); // Muestra un mensaje
-            window.location.href = "https://jhony123455.github.io/epa/#contacto"; // Redirige a GitHub Pages
-        })
-        .catch(error => {
-            alert("Error al enviar el mensaje");
-            console.error("Error:", error);
-        });
+        .then(data => alert("Formulario enviado correctamente: " + data))
+        .catch(error => alert("Error al enviar el formulario"));
     });
 });
 
