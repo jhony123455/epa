@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67c8f2d63c0d4319094e6f94/1ilkf95vr';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+
+
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <ul class="menu">
+        <li><a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+        <li><a href="#nosotros" onclick="mostrarSeccion('nosotros')">Nosotros</a></li>
+        <li><a href="#mision" onclick="mostrarSeccion('mision')">Misión</a></li>
+        <li><a href="#vision" onclick="mostrarSeccion('vision')">Visión</a></li>
+        <li><a href="#contacto" onclick="mostrarSeccion('contacto')">Contacto</a></li>
+        <li><a href="#ubicacion" onclick="mostrarSeccion('ubicacion')">Ubicación</a></li>
+    </ul>
+
+    <!-- Secciones del sitio -->
+    <div id="contenido">
+        <div id="inicio" class="seccion">
+            <h2>Bienvenido a nuestra página</h2>
+            <p>Explora nuestra plataforma y descubre todo lo que ofrecemos.</p>
+        </div>
+    
+        <div id="nosotros" class="seccion" style="display: none;">
+            <h2>Nosotros</h2>
+            <p>Somos un equipo comprometido en brindar soluciones innovadoras.</p>
+        </div>
+    
+        <div id="mision" class="seccion" style="display: none;">
+            <h2>Misión</h2>
+            <p>Ofrecer servicios de calidad que mejoren la vida de nuestros usuarios.</p>
+        </div>
+    
+        <div id="vision" class="seccion" style="display: none;">
+            <h2>Visión</h2>
+            <p>Ser un referente en nuestro sector, destacando por innovación y confianza.</p>
+        </div>
+    </div>
+    
+
+        <div id="contacto" class="seccion" style="display: none;">
+            <h2>Contacto</h2>
+            <form action="contactos.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div id="ubicacion" class="seccion" style="display: none;">
+            <h2>Ubicación</h2>
+            <p>Aquí puedes ver nuestra ubicación en el mapa.</p>
+            <div id="map" style="height: 400px; width: 100%;"></div>
+        </div>
+    </div>
+
+</body>
+</html>
