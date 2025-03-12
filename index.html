@@ -73,6 +73,14 @@
             
                 <button type="submit">Enviar</button>
             </form>
+            
+            <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Detiene el envío normal del formulario
+                window.location.href = "http://jhonyform.mydiscussion.net/contactos.php";
+            });
+            </script>
+            
         </div>
 
         <div id="ubicacion" class="seccion" style="display: none;">

@@ -49,20 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hacer la función accesible desde el HTML
     window.mostrarSeccion = mostrarSeccion;
-
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Evita el envío normal del formulario
-    
-        // Redirige manualmente con los datos
-        const formData = new FormData(this);
-        fetch("http://jhonyform.mydiscussion.net/contactos.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => alert("Formulario enviado correctamente: " + data))
-        .catch(error => alert("Error al enviar el formulario"));
-    });
 });
 
 
