@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587; 
 
         // Configuración del correo
-        $mail->setFrom('noreply@tu-dominio.com', 'Formulario de Contacto');
+        $mail->setFrom('noreply@jhonyform.mydiscussion.net', 'Formulario de Contacto');
         $mail->addAddress('jhonydavidcolombia@gmail.com'); // Destinatario
 
         $mail->isHTML(false);
