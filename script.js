@@ -49,6 +49,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hacer la función accesible desde el HTML
     window.mostrarSeccion = mostrarSeccion;
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default submission
+        
+        // Create a new form element (not attached to DOM)
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'http://jhonyform.mydiscussion.net/contactos.php';
+        
+        // Clone and append all fields from the original form
+        const nombre = document.createElement('input');
+        nombre.type = 'hidden';
+        nombre.name = 'nombre';
+        nombre.value = document.getElementById('nombre').value;
+        form.appendChild(nombre);
+        
+        const email = document.createElement('input');
+        email.type = 'hidden';
+        email.name = 'email';
+        email.value = document.getElementById('email').value;
+        form.appendChild(email);
+        
+        const mensaje = document.createElement('input');
+        mensaje.type = 'hidden';
+        mensaje.name = 'mensaje';
+        mensaje.value = document.getElementById('mensaje').value;
+        form.appendChild(mensaje);
+        
+        // Append the form to the body and submit it
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    });
+
 });
 
 
