@@ -49,6 +49,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hacer la función accesible desde el HTML
     window.mostrarSeccion = mostrarSeccion;
+
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita la recarga de la página
+    
+        let formData = new FormData(this); // Captura los datos del formulario
+    
+        fetch(this.action, { // Enviar los datos a ByetHost
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Mensaje enviado correctamente"); // Muestra un mensaje
+            window.location.href = "https://jhony123455.github.io/epa/#contacto"; // Redirige a GitHub Pages
+        })
+        .catch(error => {
+            alert("Error al enviar el mensaje");
+            console.error("Error:", error);
+        });
+    });
 });
 
 
